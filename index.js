@@ -12,7 +12,7 @@ var filter = function (pathname, req) {
 
 var apiOptions = {
   // replace api.datasource.example with the url of your target host
-  target: 'https://us-streets.api.smartystreets.com',
+  target: 'https://us-street.api.smartystreets.com',
   changeOrigin: true, // needed for virtual hosted sites like Heroku
   pathRewrite: {
     '^/ec/': '/', // remove endpoint from request path ('^/api/': '/')
