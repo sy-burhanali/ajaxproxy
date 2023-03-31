@@ -1,9 +1,7 @@
 var express = require('express');
 var proxy = require('http-proxy-middleware');
 const cors = require('cors');
-app.use(cors({
-    origin: ['http://127.0.0.1:5500/', 'https://127.0.0.1:5500/']
-}));
+
 
 // proxy middleware options
 var filter = function (pathname, req) {
@@ -39,3 +37,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use('/ec', apiProxy);
 
 app.listen(app.get('port'));
+
+app.use(cors({
+    origin: ['http://127.0.0.1:5500', 'https://127.0.0.1:5500']
+}));
