@@ -12,7 +12,7 @@ var filter = function (pathname, req) {
 
 var apiOptions = {
   // replace api.datasource.example with the url of your target host
-  target: 'https://us-street.api.smartystreets.com',
+  target: 'https://samples.openweathermap.org',
   changeOrigin: true, // needed for virtual hosted sites like Heroku
   pathRewrite: {
     '^/ec/': '/', // remove endpoint from request path ('^/api/': '/')
@@ -21,7 +21,7 @@ var apiOptions = {
     // append key-value pair for API key to end of path
     // using KEYNAME provided by web service
     // and KEYVALUE stored in Heroku environment variable
-    proxyReq.path += ('&auth-id=' + process.env.EC_APIKEY);
+    proxyReq.path += ('&appid=' + process.env.EC_APIKEY);
   },
   logLevel: 'debug' // verbose server logging
 };
