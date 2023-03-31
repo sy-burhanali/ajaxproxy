@@ -1,7 +1,6 @@
 var express = require("express");
 var proxy = require("http-proxy-middleware");
 const cors = require("cors");
-app.use(cors());
 
 // proxy middleware options
 var filter = function (pathname, req) {
@@ -35,6 +34,8 @@ var app = express();
 app.set("port", process.env.PORT || 5000);
 
 app.use("/ec", apiProxy);
+app.use(cors());
+
 
 
 app.listen(app.get("port"));
