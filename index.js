@@ -7,9 +7,9 @@ var proxy = require('http-proxy-middleware');
 var filter = function (pathname, req) {
  // return true;
   // replace www.myapp.example with origin(s) that your content will be served from
-  // return (req.headers.origin === 'https://www.myapp.example');
+  return (req.headers.origin === 'http://127.0.0.1:5500');
   // multiple origin version:
-  return ((req.headers.origin === 'http://127.0.0.1:5500') || (req.headers.origin === 'https://127.0.0.1:5500'));   
+  //return ((req.headers.origin === 'http://127.0.0.1:5500') || (req.headers.origin === 'https://127.0.0.1:5500'));   
 };
 
 var apiOptions = {
